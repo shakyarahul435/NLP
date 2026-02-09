@@ -21,4 +21,4 @@ Each and every project folder contains video and photo of projects with its resu
 Rahul Shakya - st125982 <br />
 Student Email: st125982@ait.asia <br/>
 Personal Email: shakyarahul435@gmail.com <br />
-University: Asian Institute of Technology, Thailand
+University: <a href="https://ait.ac.th/"><b>Asian Institute of Technology, Thailand</b></a>
