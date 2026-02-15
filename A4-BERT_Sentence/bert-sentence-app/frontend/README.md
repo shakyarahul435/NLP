@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# BERT Sentence App Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based frontend for the BERT Sentence Similarity and Classification application. This interface allows users to interact with BERT models for natural language understanding tasks including sentence similarity comparison and entailment classification.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Sentence Similarity**: Compare semantic similarity between two input sentences
+- **Entailment Classification**: Determine if one sentence entails, contradicts, or is neutral to another
+- **Masked Language Modeling**: Predict masked tokens in sentences (future feature)
+- **Clean UI**: Modern, responsive interface with tabbed navigation
+- **Real-time Results**: Instant predictions from the backend API
 
-### `npm start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Frontend framework
+- **JavaScript**: Programming language
+- **CSS**: Styling and layout
+- **Fetch API**: HTTP requests to Django backend
+- **Create React App**: Build tool and development server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
+- Running Django backend server
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the frontend directory:
+   ```bash
+   cd bert-sentence-app/frontend
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend Connection
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ensure the Django backend is running on `http://localhost:8000`. The frontend will automatically connect to the API endpoints.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Sentence Similarity Tab
 
-## Learn More
+1. Enter two sentences in the input fields
+2. Click "Calculate Similarity"
+3. View the cosine similarity score
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Entailment Classification Tab
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Enter a premise sentence
+2. Enter a hypothesis sentence
+3. Click "Classify Relationship"
+4. View the predicted relationship (Entailment/Contradiction/Neutral) with confidence score
 
-### Code Splitting
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+frontend/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── App.js          # Main application component
+│   │   ├── SimilarityTab.js # Sentence similarity interface
+│   │   ├── EntailmentTab.js # Entailment classification interface
+│   │   └── MaskTab.js      # Masked prediction interface (future)
+│   ├── App.css             # Main styles
+│   ├── index.js            # Application entry point
+│   └── index.css           # Global styles
+├── package.json
+└── README.md
+```
 
-### Analyzing the Bundle Size
+## API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The frontend communicates with the Django backend through REST API calls:
 
-### Making a Progressive Web App
+- `POST /api/sentence-similarity/`: Calculates similarity between sentences
+- `POST /api/entailment/`: Classifies entailment relationships
+- `POST /api/masked-prediction/`: Predicts masked tokens (planned)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Development
 
-### Advanced Configuration
+### Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `npm start`: Runs the app in development mode
+- `npm test`: Launches the test runner
+- `npm run build`: Builds the app for production
+- `npm run eject`: Ejects from Create React App (not recommended)
 
-### Deployment
+### Adding New Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Create new components in `src/components/`
+2. Update `App.js` to include new tabs or routes
+3. Add corresponding API calls in the component
+4. Update styles in `App.css`
 
-### `npm run build` fails to minify
+## Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application uses custom CSS for a clean, modern look:
+
+- Responsive design that works on desktop and mobile
+- Tabbed interface for different functionalities
+- Form inputs with validation
+- Result display with confidence scores
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## Related Projects
+
+- **Backend**: Django REST API with PyTorch BERT models
+- **Notebooks**: Jupyter notebooks with BERT implementations
+  - `A4.ipynb`: BERT from scratch
+  - `A4_2.ipynb`: Sentence-BERT fine-tuning
+
+## License
+
+This project is for educational purposes. See the main project README for full licensing information.
