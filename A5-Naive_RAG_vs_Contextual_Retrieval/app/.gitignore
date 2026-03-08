@@ -1,0 +1,36 @@
+./docker-compose.yml
+docker-compose.yml
+huggingface_token.txt
+huggingface-space
+scripts/deploy_*.ps1
+
+# Frontend dependencies and build outputs
+frontend/node_modules/
+frontend/build/
+frontend/.cache/
+
+# Python caches and virtual environments
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Django local runtime files
+backend/db.sqlite3
+backend/*.log
+
+# Local secrets / env files
+.env
+.env.*
+*.pem
+*.key
+
+# Temporary deployment bundle
+huggingface-space/_bundle/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

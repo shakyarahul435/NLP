@@ -1,0 +1,22 @@
+# Keep lightweight/report artifacts for grading
+!README.md
+!report_assets/
+!report_assets/**
+
+# Ignore large training checkpoints and local model exports
+checkpoint-115/
+dpo_truthful_model/
+
+# If model folders are ever partially tracked, still ignore heavy binaries/state
+*.safetensors
+*.bin
+*.pt
+*.pth
+trainer_state.json
+training_args.bin
+optimizer.pt
+scheduler.pt
+rng_state.pth
+
+# Local upload markers
+.hf_uploaded
