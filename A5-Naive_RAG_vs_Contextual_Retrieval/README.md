@@ -4,8 +4,6 @@ This repository contains my work for A5 in AT82.05 NLU (2026).
 
 **Hugging Face Model:** https://huggingface.co/shakyarahul/LLM-as-a-Judge
 
-I intentionally keep this report practical: what was implemented, where outputs are saved, and how each rubric item is satisfied without re-running expensive training.
-
 ## Quick Repository Map
 
 - `A5.ipynb`: main notebook with dataset prep, DPO training, evaluation, and discussion.
@@ -51,23 +49,12 @@ From `a5_outputs/report_assets/final_metrics.json`:
 - `total_valid`: `15`
 - `win_rate_percent`: `50.0`
 
-## App
-
-The app reads files from `a5_outputs/` and does not re-run notebook training.
-
 - Backend: Django REST API in `app/backend`
 - Frontend: React (npm/react-scripts) in `app/frontend`
 
 ### Future Add-ons 
 - Compose: `app/docker-compose.yml`
 - Hugging Face Space assets: `app/huggingface-space`
-
-## Notes For Submission Quality
-
-- The notebook is already executed and outputs are persisted.
-- The report assets in `a5_outputs/report_assets/` are the source of truth for grading evidence.
-- Model link is set in this README. Add your Space link when deployment is finalized.
-
 
 ---
 ## Author
