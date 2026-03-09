@@ -1,0 +1,18 @@
+{
+  "student_id": "st125982",
+  "chapter": 2,
+  "retriever_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "generator_model": "extractive sentence selector",
+  "scores": {
+    "Naive RAG": {
+      "ROUGE-1": 0.2147,
+      "ROUGE-2": 0.0508,
+      "ROUGE-L": 0.1523
+    },
+    "Contextual Retrieval": {
+      "ROUGE-1": 0.1962,
+      "ROUGE-2": 0.0482,
+      "ROUGE-L": 0.1384
+    }
+  }
+}
