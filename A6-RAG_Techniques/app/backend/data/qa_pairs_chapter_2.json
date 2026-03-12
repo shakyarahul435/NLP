@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is tokenization in modern NLP?",
+    "ground_truth_answer": "Tokenization is the process of separating running text into words, subwords, or other token units used by NLP systems."
+  },
+  {
+    "question": "Why was ELIZA important in NLP history?",
+    "ground_truth_answer": "ELIZA showed that simple pattern matching over words could imitate conversation and highlighted early chatbot impacts on users."
+  },
+  {
+    "question": "How many words can be counted in the picnic sentence depending on punctuation treatment?",
+    "ground_truth_answer": "The picnic sentence has 16 words when punctuation is excluded and 18 when punctuation is counted as separate words."
+  },
+  {
+    "question": "What are filled pauses in spoken language?",
+    "ground_truth_answer": "Filled pauses are disfluencies such as 'uh' and 'um' that occur in speech and may still be useful features in speech processing."
+  },
+  {
+    "question": "What is the difference between word types and word instances?",
+    "ground_truth_answer": "Word types are distinct vocabulary items in a corpus, while word instances are the total running occurrences of words."
+  },
+  {
+    "question": "Why might capitalization be kept or removed in NLP?",
+    "ground_truth_answer": "It depends on the task: capitalization may be removed for normalization or retained when case carries useful information."
+  },
+  {
+    "question": "Why is defining a word harder in Chinese than in English?",
+    "ground_truth_answer": "Chinese writing does not use spaces to mark word boundaries, so segmentation choices determine what counts as a word."
+  },
+  {
+    "question": "What is a morpheme?",
+    "ground_truth_answer": "A morpheme is a meaningful subpart of a word, such as '-er' in 'longer'."
+  },
+  {
+    "question": "What is Byte-Pair Encoding (BPE) used for?",
+    "ground_truth_answer": "BPE induces a subword vocabulary by merging frequent character sequences and is widely used for tokenization."
+  },
+  {
+    "question": "What role do regular expressions play in NLP pipelines?",
+    "ground_truth_answer": "Regular expressions provide a formal way to specify and manipulate text patterns and are common preprocessing tools in NLP."
+  },
+  {
+    "question": "What does edit distance measure?",
+    "ground_truth_answer": "Edit distance measures string similarity by counting insertions, deletions, and substitutions needed to transform one string into another."
+  },
+  {
+    "question": "How can disfluencies help speech recognition?",
+    "ground_truth_answer": "Disfluencies can signal restarts and upcoming structure, so they may improve prediction in speech recognition systems."
+  },
+  {
+    "question": "Why might punctuation be treated as tokens in language models?",
+    "ground_truth_answer": "Punctuation helps indicate boundaries and meaning cues, so many language models treat punctuation as separate tokens."
+  },
+  {
+    "question": "What is an utterance?",
+    "ground_truth_answer": "An utterance is the spoken-language counterpart of a sentence."
+  },
+  {
+    "question": "How did Weizenbaum's ELIZA produce responses?",
+    "ground_truth_answer": "ELIZA matched user text patterns and transformed them into scripted template responses."
+  },
+  {
+    "question": "Why can different Chinese segmentation standards produce different word counts?",
+    "ground_truth_answer": "Different standards define word boundaries differently, including treatment of names and multi-character expressions."
+  },
+  {
+    "question": "What is vocabulary size in corpus statistics?",
+    "ground_truth_answer": "Vocabulary size is the number of distinct word types, often denoted as |V|."
+  },
+  {
+    "question": "What is represented by N in corpus statistics?",
+    "ground_truth_answer": "N denotes the number of running word instances (tokens in the corpus-count sense)."
+  },
+  {
+    "question": "Why is tokenization considered a first step in NLP?",
+    "ground_truth_answer": "Most downstream NLP methods operate on token units, so text must be segmented before modeling."
+  },
+  {
+    "question": "Give one application where edit distance is important.",
+    "ground_truth_answer": "Edit distance is important in automatic speech recognition metrics such as word error rate."
+  }
+]

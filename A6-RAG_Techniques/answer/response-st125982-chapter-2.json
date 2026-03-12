@@ -1,0 +1,162 @@
+[
+  {
+    "question": "What is tokenization in modern NLP?",
+    "ground_truth_answer": "Tokenization is the process of separating running text into words, subwords, or other token units used by NLP systems.",
+    "naive_rag_answer": "In practice, since tokenization is run before any other language processing, it needs to be very fast.",
+    "contextual_retrieval_answer": "In practice, since tokenization is run before any other language processing, it needs to be very fast.",
+    "naive_source_chunk_id": 18,
+    "contextual_source_chunk_id": 18
+  },
+  {
+    "question": "Why was ELIZA important in NLP history?",
+    "ground_truth_answer": "ELIZA showed that simple pattern matching over words could imitate conversation and highlighted early chatbot impacts on users.",
+    "naive_rag_answer": "Tokenization, the ﬁrst step in modern NLP, includes pattern-based approaches that date back to ELIZA.",
+    "contextual_retrieval_answer": "Tokenization, the ﬁrst step in modern NLP, includes pattern-based approaches that date back to ELIZA.",
+    "naive_source_chunk_id": 0,
+    "contextual_source_chunk_id": 0
+  },
+  {
+    "question": "How many words can be counted in the picnic sentence depending on punctuation treatment?",
+    "ground_truth_answer": "The picnic sentence has 16 words when punctuation is excluded and 18 when punctuation is counted as separate words.",
+    "naive_rag_answer": "Word instances are the totalword instance number N of running words.1 If we ignore punctuation, the picnic sentence has 14 types and 16 instances: They picnicked by the pool, then lay back on the grass and looked at the stars.",
+    "contextual_retrieval_answer": "Word instances are the totalword instance number N of running words.1 If we ignore punctuation, the picnic sentence has 14 types and 16 instances: They picnicked by the pool, then lay back on the grass and looked at the stars.",
+    "naive_source_chunk_id": 1,
+    "contextual_source_chunk_id": 1
+  },
+  {
+    "question": "What are filled pauses in spoken language?",
+    "ground_truth_answer": "Filled pauses are disfluencies such as 'uh' and 'um' that occur in speech and may still be useful features in speech processing.",
+    "naive_rag_answer": "When we speak about the number of words in the language, we are generally referring to word types.",
+    "contextual_retrieval_answer": "When we speak about the number of words in the language, we are generally referring to word types.",
+    "naive_source_chunk_id": 8,
+    "contextual_source_chunk_id": 1
+  },
+  {
+    "question": "What is the difference between word types and word instances?",
+    "ground_truth_answer": "Word types are distinct vocabulary items in a corpus, while word instances are the total running occurrences of words.",
+    "naive_rag_answer": "We can see this fact mathematically 4 CHAPTER 2 • W ORDS AND TOKENS because the relationship between the number of types |V | and number of instances N is called Herdan’s Law (Herdan, 1960) or Heaps’ Law (Heaps, 1978) after itsHerdan’s Law Heaps’ Law discoverers (in linguistics and information retrieval respectively).",
+    "contextual_retrieval_answer": "We can see this fact mathematically 4 CHAPTER 2 • W ORDS AND TOKENS because the relationship between the number of types |V | and number of instances N is called Herdan’s Law (Herdan, 1960) or Heaps’ Law (Heaps, 1978) after itsHerdan’s Law Heaps’ Law discoverers (in linguistics and information retrieval respectively).",
+    "naive_source_chunk_id": 1,
+    "contextual_source_chunk_id": 1
+  },
+  {
+    "question": "Why might capitalization be kept or removed in NLP?",
+    "ground_truth_answer": "It depends on the task: capitalization may be removed for normalization or retained when case carries useful information.",
+    "naive_rag_answer": "The answer is that it depends on the task!They and they might be lumped together as the same type in some tasks where we care less about the formatting, while for other tasks, capitalization is a useful feature and is retained.",
+    "contextual_retrieval_answer": "The answer is that it depends on the task!They and they might be lumped together as the same type in some tasks where we care less about the formatting, while for other tasks, capitalization is a useful feature and is retained.",
+    "naive_source_chunk_id": 18,
+    "contextual_source_chunk_id": 18
+  },
+  {
+    "question": "Why is defining a word harder in Chinese than in English?",
+    "ground_truth_answer": "Chinese writing does not use spaces to mark word boundaries, so segmentation choices determine what counts as a word.",
+    "naive_rag_answer": "Here’s a sentence in English segmented into morphemes with hyphens: (2.6) Doc work-ed care-ful-ly wash-ing the glass-es As we mentioned above, in Chinese, conveniently, the writing system is set up so that each character mainly describes a morpheme.",
+    "contextual_retrieval_answer": "For example eachisolating word in the following Cantonese sentence has one morpheme (and one syllable): (2.8) keoi5 he waa6 say cyun4 entire gwok3 country zeoi3 most daai6 big gaan1 building uk1 house hai6 is ni1 this gaan1 building “He said the biggest house in the country was this one” Alternatively, in languages like Koryak, a Chukotko-Kamchatkan language spo- ken in the northern part of the Kamchatka peninsula in Russia, a single word may have very many morphemes, corresponding to a whole sentence in English (Arkadiev, 2020; Kurebito, 2017).",
+    "naive_source_chunk_id": 7,
+    "contextual_source_chunk_id": 7
+  },
+  {
+    "question": "What is a morpheme?",
+    "ground_truth_answer": "A morpheme is a meaningful subpart of a word, such as '-er' in 'longer'.",
+    "naive_rag_answer": "For example eachisolating word in the following Cantonese sentence has one morpheme (and one syllable): (2.8) keoi5 he waa6 say cyun4 entire gwok3 country zeoi3 most daai6 big gaan1 building uk1 house hai6 is ni1 this gaan1 building “He said the biggest house in the country was this one” Alternatively, in languages like Koryak, a Chukotko-Kamchatkan language spo- ken in the northern part of the Kamchatka peninsula in Russia, a single word may have very many morphemes, corresponding to a whole sentence in English (Arkadiev, 2020; Kurebito, 2017).",
+    "contextual_retrieval_answer": "For example eachisolating word in the following Cantonese sentence has one morpheme (and one syllable): (2.8) keoi5 he waa6 say cyun4 entire gwok3 country zeoi3 most daai6 big gaan1 building uk1 house hai6 is ni1 this gaan1 building “He said the biggest house in the country was this one” Alternatively, in languages like Koryak, a Chukotko-Kamchatkan language spo- ken in the northern part of the Kamchatka peninsula in Russia, a single word may have very many morphemes, corresponding to a whole sentence in English (Arkadiev, 2020; Kurebito, 2017).",
+    "naive_source_chunk_id": 4,
+    "contextual_source_chunk_id": 4
+  },
+  {
+    "question": "What is Byte-Pair Encoding (BPE) used for?",
+    "ground_truth_answer": "BPE induces a subword vocabulary by merging frequent character sequences and is widely used for tokenization.",
+    "naive_rag_answer": "• Byte-Pair Encoding or BPE is the standard way to induce tokens in a data- driven way.",
+    "contextual_retrieval_answer": "2.4 Subword Tokenization: Byte-Pair Encoding Tokenization, the ﬁrst stage of natural language processing, is the process of seg-tokenization menting the running input text into tokens.tokens We’ve seen three candidates for tokens: words, morphemes and characters.",
+    "naive_source_chunk_id": 9,
+    "contextual_source_chunk_id": 9
+  },
+  {
+    "question": "What role do regular expressions play in NLP pipelines?",
+    "ground_truth_answer": "Regular expressions provide a formal way to specify and manipulate text patterns and are common preprocessing tools in NLP.",
+    "naive_rag_answer": "2.6.3 Anchors and Boundaries Anchors are special characters that anchor regular expressions to particular placesanchors in a string.",
+    "contextual_retrieval_answer": "2.6.3 Anchors and Boundaries Anchors are special characters that anchor regular expressions to particular placesanchors in a string.",
+    "naive_source_chunk_id": 13,
+    "contextual_source_chunk_id": 13
+  },
+  {
+    "question": "What does edit distance measure?",
+    "ground_truth_answer": "Edit distance measures string similarity by counting insertions, deletions, and substitutions needed to transform one string into another.",
+    "naive_rag_answer": "and Fischer minimum edit distance algorithm (1974) but independently discovered by many people (see the Historical Notes sec- tion of Chapter 17).",
+    "contextual_retrieval_answer": "section we’ll introduce edit distance for single words, but the algorithm applies equally to entire strings.",
+    "naive_source_chunk_id": 20,
+    "contextual_source_chunk_id": 19
+  },
+  {
+    "question": "How can disfluencies help speech recognition?",
+    "ground_truth_answer": "Disfluencies can signal restarts and upcoming structure, so they may improve prediction in speech recognition systems.",
+    "naive_rag_answer": "Edit distance plays a role in NLP whenever we need compare two words or strings, for example in the crucial word error rate metric for automatic speech recognition.",
+    "contextual_retrieval_answer": "How can a user of a dataset know all these details?",
+    "naive_source_chunk_id": 3,
+    "contextual_source_chunk_id": 3
+  },
+  {
+    "question": "Why might punctuation be treated as tokens in language models?",
+    "ground_truth_answer": "Punctuation helps indicate boundaries and meaning cues, so many language models treat punctuation as separate tokens.",
+    "naive_rag_answer": "In practice, since tokenization is run before any other language processing, it needs to be very fast.",
+    "contextual_retrieval_answer": "In practice, since tokenization is run before any other language processing, it needs to be very fast.",
+    "naive_source_chunk_id": 18,
+    "contextual_source_chunk_id": 18
+  },
+  {
+    "question": "What is an utterance?",
+    "ground_truth_answer": "An utterance is the spoken-language counterpart of a sentence.",
+    "naive_rag_answer": "Weizenbaum (1966) The dialogue above is fromELIZA, an early natural language processing systemELIZA that could carry on a limited conversation with a user by imitating the responses of a Rogerian psychotherapist (Weizenbaum, 1966).",
+    "contextual_retrieval_answer": "Perhaps most important, in thinking about what is a word, we need to distinguish two ways of talking about words that will be useful throughout the book.",
+    "naive_source_chunk_id": 0,
+    "contextual_source_chunk_id": 1
+  },
+  {
+    "question": "How did Weizenbaum's ELIZA produce responses?",
+    "ground_truth_answer": "ELIZA matched user text patterns and transformed them into scripted template responses.",
+    "naive_rag_answer": "Weizenbaum (1966) The dialogue above is fromELIZA, an early natural language processing systemELIZA that could carry on a limited conversation with a user by imitating the responses of a Rogerian psychotherapist (Weizenbaum, 1966).",
+    "contextual_retrieval_answer": "Weizenbaum (1966) The dialogue above is fromELIZA, an early natural language processing systemELIZA that could carry on a limited conversation with a user by imitating the responses of a Rogerian psychotherapist (Weizenbaum, 1966).",
+    "naive_source_chunk_id": 0,
+    "contextual_source_chunk_id": 0
+  },
+  {
+    "question": "Why can different Chinese segmentation standards produce different word counts?",
+    "ground_truth_answer": "Different standards define word boundaries differently, including treatment of names and multi-character expressions.",
+    "naive_rag_answer": "Every unseen word can thus be represented by some sequence of known subword units.",
+    "contextual_retrieval_answer": "Although we have loosely talked about these properties (analytic, polysynthetic, fusional, agglutinative) as if they are properties of languages, in fact languages can make use of different morphological systems so it would be more accurate to talk about these as general tendencies.",
+    "naive_source_chunk_id": 7,
+    "contextual_source_chunk_id": 4
+  },
+  {
+    "question": "What is vocabulary size in corpus statistics?",
+    "ground_truth_answer": "Vocabulary size is the number of distinct word types, often denoted as |V|.",
+    "naive_rag_answer": "Wordtypesword type are the number of distinct words in a corpus; if the set of words in the vocabulary is V , the number of types is the vocabulary size |V |.",
+    "contextual_retrieval_answer": "Wordtypesword type are the number of distinct words in a corpus; if the set of words in the vocabulary is V , the number of types is the vocabulary size |V |.",
+    "naive_source_chunk_id": 2,
+    "contextual_source_chunk_id": 2
+  },
+  {
+    "question": "What is represented by N in corpus statistics?",
+    "ground_truth_answer": "N denotes the number of running word instances (tokens in the corpus-count sense).",
+    "naive_rag_answer": "The system has essentially induced that there is a word-initial preﬁx re-: corpus vocabulary 2 new , e, n, r, s, t, w, ne, new, r, re 2 re new 1 s e t 1 re s e t If we continue, the next merges are: merge current vocabulary ( , new) , e, n, r, s, t, w, ne, new, r, re, new ( re, new) , e, n, r, s, t, w, ne, new, r, re, new, renew (s, e) , e, n, r, s, t, w, ne, new, r, re, new, renew, se (se, t) , e, n, r, s, t, w, ne, new, r, re, new, renew, se, set function BYTE -PAIR ENCODING (strings C, number of merges k) returns vocab V V ←all unique characters in C # initial set of tokens is characters for i = 1 to k do # merge tokens k times tL, tR ←Most frequent pair of adjacent tokens in C tNEW ←tL + tR # make new token by concatenating V ←V + tNEW # update the vocabulary Replace each occurrence of tL, tR in C with tNEW # and update the corpus return V Figure 2.6 The training part of the BPE algorithm for taking a corpus broken up into in- dividual characters or bytes, and learning a vocabulary by iteratively merging tokens.",
+    "contextual_retrieval_answer": "The system has essentially induced that there is a word-initial preﬁx re-: corpus vocabulary 2 new , e, n, r, s, t, w, ne, new, r, re 2 re new 1 s e t 1 re s e t If we continue, the next merges are: merge current vocabulary ( , new) , e, n, r, s, t, w, ne, new, r, re, new ( re, new) , e, n, r, s, t, w, ne, new, r, re, new, renew (s, e) , e, n, r, s, t, w, ne, new, r, re, new, renew, se (se, t) , e, n, r, s, t, w, ne, new, r, re, new, renew, se, set function BYTE -PAIR ENCODING (strings C, number of merges k) returns vocab V V ←all unique characters in C # initial set of tokens is characters for i = 1 to k do # merge tokens k times tL, tR ←Most frequent pair of adjacent tokens in C tNEW ←tL + tR # make new token by concatenating V ←V + tNEW # update the vocabulary Replace each occurrence of tL, tR in C with tNEW # and update the corpus return V Figure 2.6 The training part of the BPE algorithm for taking a corpus broken up into in- dividual characters or bytes, and learning a vocabulary by iteratively merging tokens.",
+    "naive_source_chunk_id": 2,
+    "contextual_source_chunk_id": 2
+  },
+  {
+    "question": "Why is tokenization considered a first step in NLP?",
+    "ground_truth_answer": "Most downstream NLP methods operate on token units, so text must be segmented before modeling.",
+    "naive_rag_answer": "Sentence segmentation is a step that is can be optionally appliedsentence segmentation in text processing.",
+    "contextual_retrieval_answer": "Sentence segmentation is a step that is can be optionally appliedsentence segmentation in text processing.",
+    "naive_source_chunk_id": 18,
+    "contextual_source_chunk_id": 18
+  },
+  {
+    "question": "Give one application where edit distance is important.",
+    "ground_truth_answer": "Edit distance is important in automatic speech recognition metrics such as word error rate.",
+    "naive_rag_answer": "But the edit distance algorithm is important in another way; with a small change, it can also provide the minimum cost align- ment between two strings.",
+    "contextual_retrieval_answer": "But the edit distance algorithm is important in another way; with a small change, it can also provide the minimum cost align- ment between two strings.",
+    "naive_source_chunk_id": 20,
+    "contextual_source_chunk_id": 20
+  }
+]
