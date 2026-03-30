@@ -1,0 +1,143 @@
+{
+  "name": "A7 MCP Client",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -64,
+        80
+      ],
+      "id": "042b985f-6b6d-4bf8-9794-9189496213e6",
+      "name": "When chat message received",
+      "webhookId": "9ba94363-6c41-4349-9c75-f550c4de8287"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a Telegram scheduling assistant.\n\nRules:\n- Always reply in plain text.\n- When the user asks to create calendar events, use the Google Calendar tool.\n- Create events one by one.\n- Use the tool fields for title, start, and end.\n- Do not output raw API objects.\n- Do not use summary, description, start, or end as JSON keys.\n- If four events are requested, call the tool four times."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        80
+      ],
+      "id": "f2850688-8b5a-4c40-a872-b7af55091b7c",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {
+          "temperature": 0
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        128,
+        304
+      ],
+      "id": "9536f1e0-ba6b-4dfc-9c5c-6d9351aaa0a6",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "mXoovAd2PXPMZ89R",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        288,
+        304
+      ],
+      "id": "c7c3838d-5fdc-4721-8ade-1da09dbcb176",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "endpointUrl": "https://tunably-pocky-arian.ngrok-free.dev/mcp/ceac4fef-5a0b-425f-8753-4c43d3d5dffb",
+        "serverTransport": "sse",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.2,
+      "position": [
+        432,
+        304
+      ],
+      "id": "faf284d3-d751-4813-9d67-5cd9e2091f08",
+      "name": "MCP Client"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0fa0b771-1237-4e8f-8b93-f8d91aa7a636",
+  "meta": {
+    "instanceId": "0fddd7db14afa17e13c293c06c4ffed1fb5cb0999191c120fbba53d3df7ed9d4"
+  },
+  "id": "HvsmuYk5mYZFiWBS",
+  "tags": []
+}

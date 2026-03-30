@@ -1,0 +1,245 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "=Today’s date is {{ $now.toISODate() }}.\nYou are a Telegram assistant that helps manage project schedules.\n\nWhen the user asks to create calendar events:\n- you MUST use the Google Calendar tool\n- do not just answer in text\n- create the requested event or events in Google Calendar first\n- ALWAYS include:\n  - title\n  - description\n  - start date/time\n  - end date/time\n- after the event is successfully created, reply with a short confirmation\n- Never infer the year for relative dates. Prefer exact ISO-like dates when creating calendar events.\nToday’s date is {{ $now.toISODate() }}.\n\nIf the user does not specify a year:\n- always use the current year or a future year\n- never use past years\n- ensure the final date is in the future relative to today\n\nInterpret relative dates like \"tomorrow\" or \"next week\" based on today’s date, and ensure the result is in the future.\n\nWhen the user asks whether events exist:\n- use the Google Calendar tool to check\n- then answer clearly\n\nIf the user asks to create multiple project phases, create all of them.\n\nBe concise and user-friendly.\n\nset UTC to Thailand timestamp."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        800,
+        -32
+      ],
+      "id": "e22db4dd-f63a-48cb-8038-ed0968c69a55",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        576,
+        224
+      ],
+      "id": "75d3ca62-37ef-4652-977c-49b2ec9a1b2e",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "mXoovAd2PXPMZ89R",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        736,
+        208
+      ],
+      "id": "63c49230-a2b4-46ea-a12a-0642c3e3fa37",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Creates Google Calendar events on the user's calendar.\n\nWhen using this tool, always provide:\n- summary/title\n- description\n- start date/time\n- end date/time\nUse this tool whenever the user asks to schedule, create, add, or plan calendar events.",
+        "calendar": {
+          "__rl": true,
+          "value": "c_c3481e9ceebf606ab7f49ad39fe7e030a1f8f15ee49fbeb5813990cea761a317@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "TODO"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "useDefaultReminders": false,
+        "additionalFields": {
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        912,
+        208
+      ],
+      "id": "4bc4c75e-4805-448e-964e-6711f47f0788",
+      "name": "Create an event in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "jQi1qkYw4mBoniQ8",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "c_c3481e9ceebf606ab7f49ad39fe7e030a1f8f15ee49fbeb5813990cea761a317@group.calendar.google.com",
+          "mode": "list",
+          "cachedResultName": "TODO"
+        },
+        "timeMin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('After', ``, 'string') }}",
+        "timeMax": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Before', ``, 'string') }}",
+        "options": {
+          "fields": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fields', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1072,
+        208
+      ],
+      "id": "75474196-c596-4b60-a8ef-891a78d78ba0",
+      "name": "Get many events in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "jQi1qkYw4mBoniQ8",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger1').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1152,
+        -32
+      ],
+      "id": "79d0f253-af2e-42c2-afe5-caeb0938951a",
+      "name": "Send a text message",
+      "webhookId": "213954d7-3464-4701-874b-3a4590ccd4e4",
+      "credentials": {
+        "telegramApi": {
+          "id": "3k2QejPEzsPGgLkJ",
+          "name": "Telegram account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        16
+      ],
+      "id": "5485467d-cc47-4618-ad2e-4c0eca1aec93",
+      "name": "Telegram Trigger1",
+      "webhookId": "967a9473-9fd9-48ca-8330-c4492d33b0ea",
+      "credentials": {
+        "telegramApi": {
+          "id": "3k2QejPEzsPGgLkJ",
+          "name": "Telegram account 3"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an event in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many events in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "d7ee4eca-7737-464e-9ee7-6c3f0e74484d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0fddd7db14afa17e13c293c06c4ffed1fb5cb0999191c120fbba53d3df7ed9d4"
+  },
+  "id": "uOvHgKeokoJyT7RH",
+  "tags": []
+}

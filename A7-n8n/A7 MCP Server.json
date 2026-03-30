@@ -1,0 +1,103 @@
+{
+  "name": "A7 MCP Server",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "ceac4fef-5a0b-425f-8753-4c43d3d5dffb"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "0bcd1548-2109-4d97-a03e-0f433b84e1b1",
+      "name": "MCP Server Trigger",
+      "webhookId": "ceac4fef-5a0b-425f-8753-4c43d3d5dffb"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -96,
+        240
+      ],
+      "id": "e3c2ee6d-9329-43f2-9a52-b691621d4eaf",
+      "name": "Calculator"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTimeTool",
+      "typeVersion": 2,
+      "position": [
+        144,
+        256
+      ],
+      "id": "a5bf2b15-10f5-4b56-9541-0b62e41d9968",
+      "name": "Date & Time"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        416,
+        288
+      ],
+      "id": "e88f3a41-fab6-48af-a8c3-162dae70f454",
+      "name": "Code Tool"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "b4f2b838-e1da-4a82-ae57-c8cd8dec3caa",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0fddd7db14afa17e13c293c06c4ffed1fb5cb0999191c120fbba53d3df7ed9d4"
+  },
+  "id": "nGMAszoRONrmoihc",
+  "tags": []
+}
